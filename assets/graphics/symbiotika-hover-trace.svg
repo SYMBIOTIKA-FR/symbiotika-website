@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 92" role="img" aria-label="Symbiotika hover trace">
+  <defs>
+    <linearGradient id="thermal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1F4FC4"/>
+      <stop offset="0.48" stop-color="#FF4F8B"/>
+      <stop offset="0.74" stop-color="#F47B20"/>
+      <stop offset="1" stop-color="#F9C440"/>
+    </linearGradient>
+  </defs>
+
+  <!-- one continuous ink-like trace; intentionally imperfect, not a geometric oval -->
+  <path
+    d="M18 55
+       C36 22, 96 12, 166 17
+       C231 21, 291 34, 302 50
+       C313 67, 274 79, 213 81
+       C147 84, 79 78, 43 67
+       C19 60, 17 49, 33 40
+       C56 27, 101 24, 146 27"
+    fill="none"
+    stroke="#111111"
+    stroke-width="2.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    vector-effect="non-scaling-stroke"/>
+
+  <!-- encounter mark: a tiny coloured trace appears where the line doubles back -->
+  <path
+    d="M31 40 C39 35, 48 32, 59 30"
+    fill="none"
+    stroke="url(#thermal)"
+    stroke-width="3.3"
+    stroke-linecap="round"
+    vector-effect="non-scaling-stroke"/>
+
+  <!-- tiny ink residue -->
+  <circle cx="66" cy="29" r="2.2" fill="#111111"/>
+  <circle cx="74" cy="28" r="1.25" fill="#F9C440"/>
+</svg>

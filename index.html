@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#f7f6f1">
   <meta name="description" content="Symbiotika is a contemporary intercultural artistic platform. A place for exchange, artistic practice and togetherness.">
   <title>Symbiotika — Art in relation</title>
+  <link rel="preload" href="assets/Font/Dosis_bleed-Regular.otf" as="font" type="font/otf" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js" defer></script>
 </head>
@@ -15,37 +16,39 @@
   <a class="wordmark" href="#home" aria-label="Symbiotika home">SYMBIOTIKA</a>
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" hidden><span>Menu</span><span aria-hidden="true">☰</span></button>
   <nav id="main-nav" class="main-nav" aria-label="Main navigation"><a href="#about">About</a><a href="#projects">Projects</a><a href="#archive">Archive</a><a href="#collaborate">Collaborate</a><a href="#contact">Contact</a></nav>
-  <span class="header-marker" aria-hidden="true">●</span>
+  
+  <span class="header-bleed" aria-hidden="true"><img src="assets/graphics/header bleed.png" alt="" width="2172" height="724"></span>
 </header>
 <main id="main">
   <section class="hero shell" id="home" aria-labelledby="hero-title">
     <div class="hero-copy">
       <p class="eyebrow">Contemporary intercultural<br>artistic platform</p>
-      <h1 id="hero-title">A place for exchange, artistic practice and togetherness.</h1>
+      <h1 id="hero-title"><span>A place for exchange,</span><span>artistic practice and</span><span>togetherness.</span></h1>
       <p class="intro">Symbiotika brings people, ideas and artistic practices into relation across cultures.</p>
       <a class="down-link" href="#about" aria-label="Discover Symbiotika">↓</a>
     </div>
-    <button class="hero-interaction" type="button" data-interaction="ready" aria-label="Bring the two forms together" aria-pressed="false">
-      <span class="art outline outline-yellow" style="--art-ratio:2100/2300;--art-width:304.7619%;--art-left:-102.3810%;--art-top:-28.2609%" aria-hidden="true"><img src="assets/graphics/interaction_outline_yellow.svg" alt="" width="6400" height="3600"></span> <span class="art outline outline-blue" style="--art-ratio:2300/2150;--art-width:278.2609%;--art-left:-89.1304%;--art-top:-33.7209%" aria-hidden="true"><img src="assets/graphics/interaction_outline_blue.svg" alt="" width="6400" height="3600"></span>
-      <span class="art hero-collaboration" style="--art-ratio:3220/2750;--art-width:198.7578%;--art-left:-47.8261%;--art-top:-11.4545%" aria-hidden="true"><img src="assets/graphics/symbiotika_collaboration.svg" alt="" width="6400" height="3600"></span>
-    </button>
-    <aside class="hero-note"><p class="eyebrow ruled">Symbiosis</p><span class="interaction-hint">Hover or tap to meet</span><p>Independent entities encounter, interact and create new possibilities together.</p></aside>
+
   </section>
   <section class="upcoming shell" id="upcoming" aria-labelledby="upcoming-title">
     <div class="upcoming-identity">
-      <p class="eyebrow programme-label">On the horizon / Programme</p>
+      
       <div class="event-line-composition">
-        <span class="art current-line" data-line-state="default" style="--art-ratio:6400/391.667;--art-width:100%;--art-left:0%;--art-top:-255.3189%" aria-hidden="true"><img src="assets/graphics/line.svg" alt="" width="6400" height="3600"></span>
         <h2 id="upcoming-title">UPCOMING EVENTS</h2>
       </div>
-      <p class="programme-note">A space for what comes next.<br>Encounters, open calls and shared practice.</p>
+      
+    </div>
+    <div class="registration-ticker">
+      <a class="ticker-link" href="#registration-details" aria-label="Open call registrations now open — view registration details">
+        <span class="ticker-track" aria-hidden="true"><span class="ticker-copy">OPEN CALL REGISTRATIONS NOW OPEN — CLICK HERE TO SUBMIT A REGISTRATION —&nbsp;</span><span class="ticker-copy">OPEN CALL REGISTRATIONS NOW OPEN — CLICK HERE TO SUBMIT A REGISTRATION —&nbsp;</span></span>
+      </a>
+      <button class="ticker-pause" type="button" aria-pressed="false" aria-label="Pause registration ticker" hidden>Pause</button>
     </div>
     <div class="event-board" aria-label="Upcoming programme posters">
       <p class="eyebrow event-pin">Programme / Noticeboard</p>
       <div class="event-posters">
         <figure class="poster-primary">
           <img src="assets/projects/project-03-UE/01.webp" alt="Open call for artists: Nowruz As Now art residency, 1–20 March 2027, Domaine Foray, Burgundy, France" width="1080" height="1350" decoding="async">
-          <figcaption><span class="eyebrow">01 / Open call</span><h3>Nowruz As Now</h3><p>Art residency · 1–20 March 2027</p><p>Domaine Foray, Burgundy, France</p><details class="event-details"><summary>Learn more <span aria-hidden="true">→</span></summary><p>Open call for the Nowruz As Now art residency, 1–20 March 2027. Application details will be shared here.</p></details></figcaption>
+          <figcaption><span class="eyebrow">01 / Open call</span><h3>Nowruz As Now</h3><p>Art residency · 1–20 March 2027</p><p>Domaine Foray, Burgundy, France</p><details class="event-details" id="registration-details"><summary>Learn more <span aria-hidden="true">→</span></summary><p>Open call for the Nowruz As Now art residency, 1–20 March 2027. Application details will be shared here.</p></details></figcaption>
         </figure>
         <figure class="poster-secondary">
           <img src="assets/projects/project-03-UE/02.webp" alt="We symbiotize: something new emerges that none could make alone. A poster with connected blue, yellow and thermal ink forms." width="1080" height="1350" decoding="async">
@@ -54,20 +57,58 @@
       </div>
     </div>
   </section>
-  <section class="about shell" id="about" aria-labelledby="about-title">
-    <div class="section-index"><span class="art editorial-ink" style="--art-ratio:2891/1900;--art-width:221.3767%;--art-left:-60.4714%;--art-top:-44.8623%" aria-hidden="true"><img src="assets/graphics/ink_line_1.svg" alt="" width="6400" height="3600"></span><span>01 / In relation</span><span class="index-rule"></span></div>
-    <div class="about-copy"><p class="eyebrow ruled">About Symbiotika</p><h2 id="about-title">An ongoing and living practice<br>of intercultural togetherness.</h2><p>Symbiotika is a platform for artistic exchange, collaboration and learning across cultures. We support individuals and organisations to create, share and grow together.</p><a class="text-link" href="#collaborate">Connect with us <span aria-hidden="true">→</span></a></div>
-    <div class="principles about-chapters">
-      <article><span class="art principle-art dot" style="--art-ratio:2270/2270;--art-width:281.9383%;--art-left:-90.9692%;--art-top:-29.2952%" aria-hidden="true"><img src="assets/graphics/dot.svg" alt="" width="6400" height="3600"></span><div><p class="eyebrow chapter-label">Context</p><h3>Where It Began...</h3><p>Connecting practices, people and places across cultures.</p></div></article>
-      <article><span class="chapter-number" aria-hidden="true">02</span><div><p class="eyebrow chapter-label">Becoming</p><h3>What Brought Us Together</h3><p>Supporting projects, partnerships and new constellations.</p></div></article>
-      <article><span class="art principle-art growth" style="--art-ratio:3200/2420;--art-width:200.0000%;--art-left:-50.0000%;--art-top:-24.3802%" aria-hidden="true"><img src="assets/graphics/ink_growth.svg" alt="" width="6400" height="3600"></span><div><p class="eyebrow chapter-label">Network</p><h3>Our Extended Family...</h3><p>Building long-term relationships and shared knowledge.</p></div></article>
+  <section class="about paper-about" id="about" aria-labelledby="about-title">
+    <div class="about-introduction"><h2 class="display-title" id="about-title">ABOUT SYMBIOTIKA</h2><p>An ongoing and living practice<br>of intercultural togetherness.</p></div>
+    <div class="about-cards">
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="context-toggle" aria-expanded="false" aria-controls="context-paper"><span>CONTEXT</span><span class="card-subtitle">Where It Began...</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="context-paper" role="region" aria-labelledby="context-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:2840/2930;--art-width:225.3521%;--art-left:-62.6761%;--art-top:-8.7031%" aria-hidden="true"><img src="assets/graphics/ink_blob_01.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>Where It Began...</h4><p>Symbiotika began from the need to create space for encounters between people, artistic practices, cultures and places. Rather than defining one fixed way of working, it creates conditions where different perspectives can meet and affect one another.</p></div>
+        </div></div></div>
+      </article>
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="etymology-toggle" aria-expanded="false" aria-controls="etymology-paper"><span>ETYMOLOGY</span><span class="card-subtitle">The Anatomy of Our Name</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="etymology-paper" role="region" aria-labelledby="etymology-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:3220/2750;--art-width:198.7578%;--art-left:-47.8261%;--art-top:-11.4545%" aria-hidden="true"><img src="assets/graphics/symbiotika_collaboration.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>The Anatomy of Our Name</h4><p>Symbiotika comes from the idea of symbiosis: different entities living, changing and evolving through relation. For us, connection is not simply about existing side by side. An encounter leaves a trace and creates something that did not exist before.</p></div>
+        </div></div></div>
+      </article>
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="becoming-toggle" aria-expanded="false" aria-controls="becoming-paper"><span>BECOMING</span><span class="card-subtitle">What Brought Us Together</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="becoming-paper" role="region" aria-labelledby="becoming-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:3200/2420;--art-width:200%;--art-left:-50%;--art-top:-24.3802%" aria-hidden="true"><img src="assets/graphics/ink_growth.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>What Brought Us Together</h4><p>Symbiotika is an ongoing and living practice. It grows through conversations, collaborations, shared experiences and unexpected encounters. Its identity is not fixed; it continues to become through the people and practices that enter it.</p></div>
+        </div></div></div>
+      </article>
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="network-toggle" aria-expanded="false" aria-controls="network-paper"><span>NETWORK</span><span class="card-subtitle">Our Extended Family...</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="network-paper" role="region" aria-labelledby="network-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:3200/2420;--art-width:200%;--art-left:-50%;--art-top:-24.3802%" aria-hidden="true"><img src="assets/graphics/ink_growth.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>Our Extended Family...</h4><p>Symbiotika develops through an expanding network of artists, collaborators, organisations, spaces and communities. Each relationship contributes to the platform and leaves its own trace within it.</p></div>
+        </div></div></div>
+      </article>
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="partners-toggle" aria-expanded="false" aria-controls="partners-paper"><span>PARTNERS</span><span class="card-subtitle">The People We Grew With</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="partners-paper" role="region" aria-labelledby="partners-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:3770/2520;--art-width:169.7613%;--art-left:-34.8806%;--art-top:-21.4286%" aria-hidden="true"><img src="assets/graphics/support.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>The People We Grew With</h4><p>Our partners help create the conditions for exchange, production and experimentation. They are not only supporters of individual projects, but part of the wider ecology through which Symbiotika grows.</p></div>
+        </div></div></div>
+      </article>
+      <article class="about-card">
+        <h3><button class="about-toggle" type="button" id="mission-toggle" aria-expanded="false" aria-controls="mission-paper"><span>MISSION</span><span class="card-subtitle">Why We Exist</span><span class="card-sign" aria-hidden="true">+</span></button></h3>
+        <div class="expand-panel paper-panel" id="mission-paper" role="region" aria-labelledby="mission-toggle" inert><div class="expand-inner"><div class="paper-sheet">
+          <span class="art paper-illustration" style="--art-ratio:3335/3135;--art-width:191.904%;--art-left:-43.0285%;--art-top:-7.3365%" aria-hidden="true"><img src="assets/graphics/open_call.svg" alt="" width="6400" height="3600"></span>
+          <div class="paper-copy"><h4>Why We Exist</h4><p>Symbiotika creates spaces for artistic exchange across cultures, practices and disciplines. We support encounters that can lead to new collaborations, shared knowledge and forms of practice that could not emerge alone.</p></div>
+        </div></div></div>
+      </article>
     </div>
   </section>
   <section class="projects shell" id="projects" aria-labelledby="projects-title">
-    <div class="section-heading"><h2 class="eyebrow ruled" id="projects-title">Current projects</h2><span class="small-note">Practices in progress / 01—02</span></div>
+    <div class="section-heading" id="archive"><h2 class="eyebrow ruled" id="projects-title">PAST PROJECTS</h2><span class="small-note">From the archive / 01—02</span></div>
     <div class="project-grid">
       <article class="project-featured" id="project-01">
-        <div class="project-copy"><span class="tag">Featured</span><div><p class="project-number">01 / Gathering</p><h3>Nowruz As Now!</h3><p class="project-description">A space for artistic exchange. Project context, collaborators and current phase to follow.</p><button class="disclosure-button project-toggle" type="button" aria-expanded="false" aria-controls="nan-story"><span>Open project</span><span aria-hidden="true">+</span></button></div></div>
+        <div class="project-copy"><span class="tag">Featured</span><div><p class="project-number">01 / Gathering</p><h3>Nowruz As Now!</h3><p class="project-description">A space for artistic exchange. Project documentation and shared moments.</p><button class="disclosure-button project-toggle" type="button" aria-expanded="false" aria-controls="nan-story"><span>Open project</span><span aria-hidden="true">+</span></button></div></div>
         <div class="project-image"><img src="assets/projects/project-01-nan/cover.webp" alt="Musicians playing together in a candlelit room" width="4669" height="3067" decoding="async"></div>
       </article>
       <article class="project-secondary" id="project-02">
@@ -89,17 +130,16 @@
         <figure><img src="assets/projects/project-02-market/02.webp" alt="Solidarity Art Market — project documentation, image 2" loading="lazy"><figcaption>02 / In exchange</figcaption></figure>
       </div><button class="disclosure-button story-close" type="button" data-close="market-story">Close project <span aria-hidden="true">×</span></button></div></div>
     </div>
-    <div class="project-archive" id="archive">
-      <button class="disclosure-button archive-toggle" type="button" aria-expanded="false" aria-controls="past-projects">PAST PROJECTS <span aria-hidden="true">→</span></button>
-    <div class="expand-panel" id="past-projects" role="region" aria-label="Past project previews" inert><div class="expand-inner"><div class="archive-strip">
-      <p class="eyebrow">Working archive<br><span class="small-note">Selected project imagery</span></p>
-      <figure><img src="assets/projects/project-01-nan/02.webp" alt="Nowruz As Now! documentation" loading="lazy"><figcaption><span>01</span> Nowruz As Now!</figcaption></figure>
-      <figure><img src="assets/projects/project-02-market/02.webp" alt="Solidarity Art Market documentation" loading="lazy"><figcaption><span>02</span> Solidarity Art Market</figcaption></figure>
-      <p class="archive-note">An archive in progress.<br>Further projects and documentation to follow.</p>
-    </div></div></div>
-    </div>
   </section>
 
+  <section class="connect shell" id="connect" aria-labelledby="connect-title">
+    <div class="section-heading"><h2 class="eyebrow ruled" id="connect-title">Be Part of It</h2><span class="small-note">Let’s Connect</span></div>
+    <div class="connect-grid">
+      <article id="opportunities"><span class="art connect-art" style="--art-ratio:3335/3135;--art-width:191.904%;--art-left:-43.0285%;--art-top:-7.3365%" aria-hidden="true"><img src="assets/graphics/open_call.svg" alt="" width="6400" height="3600"></span><h3>Opportunities</h3><p>Open calls, residencies, events and participation.</p><a class="text-link" href="#upcoming">See upcoming events <span aria-hidden="true">→</span></a></article>
+      <article><span class="art connect-art" style="--art-ratio:3220/2750;--art-width:198.7578%;--art-left:-47.8261%;--art-top:-11.4545%" aria-hidden="true"><img src="assets/graphics/symbiotika_collaboration.svg" alt="" width="6400" height="3600"></span><h3>Collaborate</h3><p>Propose a project, partnership or idea.</p><a class="text-link" href="#collaborate">Send a proposal <span aria-hidden="true">→</span></a></article>
+      <article><span class="art connect-art" style="--art-ratio:3770/2520;--art-width:169.7613%;--art-left:-34.8806%;--art-top:-21.4286%" aria-hidden="true"><img src="assets/graphics/support.svg" alt="" width="6400" height="3600"></span><h3>Support</h3><p>Become a member, make a donation or support our activities.</p><a class="text-link" href="#support">Support Symbiotika <span aria-hidden="true">→</span></a></article>
+    </div>
+  </section>
 </main>
 <footer class="site-footer shell" id="contact">
   <div class="footer-brand"><a class="wordmark" href="#home">SYMBIOTIKA</a><p class="eyebrow">Contemporary intercultural<br>artistic platform</p><span class="small-note">Art in relation.</span></div>
@@ -108,13 +148,13 @@
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#upcoming">Upcoming Events</a>
-    <a href="#archive" data-open-archive>Past Projects</a>
+    <a href="#archive">Past Projects</a>
     <details id="collaborate"><summary>Collaborate</summary><p>Propose a project, partnership or idea. Submission details are coming soon.</p></details>
     <details id="support"><summary>Support</summary><p>Become a member, make a donation or support our activities. Details are coming soon.</p></details>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="newsletter"><h2>Newsletter</h2><p id="newsletter-description">Join our mailing list for updates, opportunities and events.</p><label class="sr-only" for="newsletter-email">Your email</label><div class="email-field"><input id="newsletter-email" type="email" placeholder="Your email" autocomplete="email" aria-describedby="newsletter-status"><button type="button" disabled aria-label="Newsletter signup coming soon">→</button></div><p class="small-note" id="newsletter-status">Sign-up coming soon.</p></div>
-  <div class="footer-social"><p class="eyebrow">Elsewhere</p><span>Instagram ↗</span><span>Facebook ↗</span><span>LinkedIn ↗</span><p class="small-note">Social links coming soon</p></div>
+  <div class="newsletter"><h2 class="eyebrow">Newsletter</h2><p id="newsletter-description">Join our mailing list for updates, opportunities and events.</p><label class="sr-only" for="newsletter-email">Your email</label><div class="email-field"><input id="newsletter-email" type="email" placeholder="Your email" autocomplete="email" aria-describedby="newsletter-status"><button type="button" disabled aria-label="Newsletter signup coming soon">→</button></div><p class="small-note" id="newsletter-status">Sign-up coming soon.</p></div>
+  <div class="footer-social"><p class="eyebrow">Elsewhere</p><details><summary>Instagram</summary><p>Profile link coming soon.</p></details><details><summary>Facebook</summary><p>Profile link coming soon.</p></details><details><summary>LinkedIn</summary><p>Profile link coming soon.</p></details></div>
   <div class="footer-bottom"><span>© Symbiotika</span><span>Independent practices. Shared possibilities.</span><a href="#home">Back to top ↑</a></div>
 </footer>
 </body>
