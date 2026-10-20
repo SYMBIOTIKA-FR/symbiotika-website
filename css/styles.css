@@ -1634,36 +1634,6 @@ body::before { opacity:.095; }
 .registration-ticker:is(:hover,:focus-within,.is-paused) .ticker-track { animation-play-state:paused; }
 @keyframes registration-scroll { to { transform:translateX(-50%); } }
 
-/* Full-width thermal index; all content remains aligned to the site grid. */
-.about.paper-about { --about-inset:max(56px,calc((100% - 1320px)/2)); width:100%; max-width:none; margin-inline:0; padding:50px 0; background:var(--paper); }
-.about .about-introduction { margin-inline:var(--about-inset); }
-.about .about-cards { width:100%; border:0; }
-.about-card:nth-child(1) { --strip-color:#2924cf; --strip-ink:#fff; --panel-color:#eeedff; }
-.about-card:nth-child(2) { --strip-color:#6926cf; --strip-ink:#fff; --panel-color:#f1ebfc; }
-.about-card:nth-child(3) { --strip-color:#b50083; --strip-ink:#fff; --panel-color:#faeaf6; }
-.about-card:nth-child(4) { --strip-color:#ff4b91; --strip-ink:#171317; --panel-color:#ffeef4; }
-.about-card:nth-child(5) { --strip-color:#ff792e; --strip-ink:#171317; --panel-color:#fff1e7; }
-.about-card:nth-child(6) { --strip-color:#ebf32b; --strip-ink:#171317; --panel-color:#f8fadf; }
-.about .about-toggle { border:0; padding:25px var(--about-inset); background:var(--strip-color); color:var(--strip-ink); grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(28px,1fr); }
-.about .about-toggle .card-subtitle { text-align:center; color:inherit; }
-.about .about-toggle .card-sign { color:inherit; }
-.about .about-toggle:focus-visible { outline:2px solid currentColor; outline-offset:-6px; }
-.about .about-toggle:hover>span:first-child { text-decoration:underline; text-underline-offset:5px; text-decoration-thickness:1px; }
-.about .paper-sheet { grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:0; padding:48px var(--about-inset); min-height:300px; background:var(--panel-color); align-items:center; }
-.about .paper-illustration { width:clamp(64px,6vw,88px); justify-self:center; }
-.about .paper-copy { padding-left:20px; }
-@media(max-width:1050px) {
-  .about.paper-about { --about-inset:32px; }
-}
-@media(max-width:700px) {
-  .about.paper-about { --about-inset:20px; padding-block:35px; }
-  .about .about-toggle { grid-template-columns:minmax(0,1fr) 26px; padding-block:21px; }
-  .about .about-toggle .card-subtitle { text-align:left; }
-  .about .paper-sheet { grid-template-columns:minmax(0,1fr); gap:22px; padding-block:32px; }
-  .about .paper-illustration { width:64px; justify-self:start; }
-  .about .paper-copy { padding-left:0; }
-}
-
 /* Small directional marks gather ink in place; no extra artwork or continuous motion. */
 .text-link>span[aria-hidden],.event-details summary>span,.project-toggle>span:last-child,.down-link {
   display:inline-block; transition:text-shadow 180ms ease, transform 250ms ease; text-shadow:0 0 0 transparent;
@@ -1688,3 +1658,141 @@ body::before { opacity:.095; }
   .text-link:is(:hover,:focus-visible)>span[aria-hidden],.event-details summary:is(:hover,:focus-visible)>span,
   .project-toggle:is(:hover,:focus-visible)>span:last-child,.down-link:is(:hover,:focus-visible) { transform:none; text-shadow:none; }
 }
+
+/* Static editorial About and a single archive entry point. */
+.about-editorial { padding-block:55px 35px; }
+.about-editorial>h2 { margin:0 0 30px; }
+.about-editorial-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:8%; }
+.about-statement h3 { font-size:clamp(24px,2.5vw,34px); font-weight:500; line-height:1.25; margin:0 0 22px; }
+.about-statement p { max-width:440px; font-size:15px; line-height:1.7; }
+.concept-index { margin:0; }
+.concept-index>div { display:grid; grid-template-columns:.8fr 1.2fr; gap:20px; padding:17px 0; border-top:1px solid var(--rule); }
+.concept-index>div:last-child { border-bottom:1px solid var(--rule); }
+.concept-index dt { font-size:11px; font-weight:600; letter-spacing:1.2px; }
+.concept-index dd { margin:0; font-size:15px; }
+.archive-entry { padding-block:28px 45px; }
+.archive-entry .text-link { display:flex; justify-content:space-between; padding-block:22px; border-top:1px solid var(--rule); }
+.archive-entry .text-link>span { font:32px/1 var(--body-font); }
+
+/* A consistent vertical archive: each gallery sits directly below its preview. */
+.archive-page { padding-block:55px; }
+.archive-page>h1 { margin:0 0 35px; }
+.archive-project { padding-block:30px; border-top:1px solid var(--rule); }
+.archive-preview { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:6%; align-items:center; }
+.archive-cover { width:100%; aspect-ratio:4/3; object-fit:contain; background:#ebe7de; }
+.archive-project-copy h2 { font-size:clamp(25px,2.5vw,35px); font-weight:500; line-height:1.2; margin:12px 0 18px; }
+.archive-project-copy>p:not(.eyebrow) { max-width:390px; margin-bottom:22px; }
+.archive-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; padding-block:30px; }
+.archive-gallery figure { margin:0; min-width:0; }
+.archive-gallery img { display:block; width:100%; aspect-ratio:4/3; object-fit:contain; background:#ebe7de; }
+.archive-gallery figcaption { font-size:12px; margin-top:8px; }
+.archive-gallery-panel .story-close { margin-bottom:12px; }
+@media(max-width:700px) {
+  .about-editorial { padding-block:35px 20px; }
+  .about-editorial-grid { grid-template-columns:1fr; gap:30px; }
+  .concept-index>div { grid-template-columns:.8fr 1.2fr; gap:14px; }
+  .concept-index dd { font-size:14px; }
+  .archive-entry { padding-block:15px 30px; }
+  .archive-page { padding-block:35px; }
+  .archive-preview,.archive-gallery { grid-template-columns:minmax(0,1fr); gap:22px; }
+}
+
+/* Noticeboard: one shared image height, natural widths, scroll contained in the board. */
+.event-posters { --poster-height:480px; display:flex; align-items:flex-start; gap:28px; overflow-x:auto; padding-bottom:16px; scroll-snap-type:x proximity; }
+.event-posters>figure:nth-child(n) { flex:0 0 auto; width:min-content; max-width:none; margin:0; scroll-snap-align:start; }
+.event-posters>figure>img { display:block; height:var(--poster-height); width:auto; max-width:none; object-fit:contain; }
+.event-posters figcaption { min-width:100%; width:0; }
+.site-header .wordmark { color:#fff; transition:color 180ms ease; }
+.site-header .wordmark:hover { color:var(--wordmark-hover,#fff); }
+@media(max-width:700px) {
+  .event-posters { --poster-height:360px; gap:20px; }
+}
+
+/* About's title face is isolated from the site's body/UI typography. */
+@font-face { font-family:"About Dosis Bleed"; src:url('../assets/about assets/font/Dosis_bleed-Regular.otf') format('opentype'); font-weight:400; font-style:normal; font-display:swap; }
+/* About concepts use a curated desktop composition and a static mobile list. */
+.about-network { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:30px; padding-block:65px; }
+.about-network::before { content:""; position:absolute; inset:0; background:url('../assets/about assets/texture/paper_texture.avif') center / 700px auto repeat; opacity:.07; pointer-events:none; z-index:-1; }
+.about-network-intro { padding-top:18px; }
+.about-network-intro h2 { font:400 clamp(34px,3.5vw,49px)/1.05 "About Dosis Bleed",sans-serif; margin:0 0 30px; }
+.about-network-intro h3 { font:500 clamp(23px,2.3vw,32px)/1.3 var(--body-font); margin:0 0 24px; }
+.about-network-intro>p { font-size:15px; line-height:1.7; max-width:400px; }
+.about-network-visual { min-width:0; position:relative; }
+.about-network-stage { position:relative; height:570px; }
+.about-network-nodes { height:100%; display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,1.5fr) minmax(0,1fr); grid-template-rows:repeat(3,190px); align-items:start; }
+.about-node { position:relative; width:100%; min-width:0; display:flex; flex-direction:column; align-items:flex-start; padding:8px 0; border:0; background:transparent; color:var(--ink); text-align:left; font-family:var(--body-font); cursor:pointer; }
+.about-node img { width:78px; height:78px; object-fit:contain; transition:transform 220ms ease; }
+.about-node-label { font-size:12px; font-weight:650; letter-spacing:1px; margin-top:5px; }
+.about-node-subtitle { font-size:13px; line-height:1.4; margin-top:5px; }
+.about-node:is(:hover,:focus-visible,[aria-expanded="true"]) img { transform:translateY(-2px) scale(1.04); }
+.about-node[aria-expanded="true"] .about-node-label { text-decoration:underline; text-underline-offset:5px; }
+.about-node-context { grid-area:1/1; }
+.about-node-etymology { grid-area:1/3; }
+.about-node-becoming { grid-area:2/1; }
+.about-node-network { grid-area:2/3; }
+.about-node-partners { grid-area:3/1; }
+.about-node-mission { grid-area:3/3; }
+.about-description { position:absolute; z-index:3; isolation:isolate; width:240px; margin:0; padding:22px 20px; background:#faf8f2; border:0; box-shadow:0 5px 18px rgba(25,26,25,.07); animation:about-description-in 180ms ease; }
+.about-description::before { content:""; position:absolute; inset:0; z-index:-1; background:url('../assets/about assets/texture/paper_texture.avif') center / 370px auto repeat; opacity:.32; pointer-events:none; }
+.about-description-category { font-size:10px; letter-spacing:1px; margin:0 20px 10px 0; }
+.about-description h3 { font:500 18px/1.3 var(--body-font); margin:0 14px 12px 0; }
+.about-description-copy { font-size:14px; line-height:1.55; }
+.about-description-close { position:absolute; right:5px; top:5px; width:30px; height:30px; border:0; background:transparent; color:inherit; font:22px/1 var(--body-font); cursor:pointer; }
+@keyframes about-description-in { from { opacity:0; transform:translateY(4px); } to { opacity:1; transform:none; } }
+@media(max-width:1023px) {
+  .about-network { grid-template-columns:minmax(0,1fr); padding-block:35px; gap:28px; }
+  .about-network::before { display:none; }
+  .about-network-intro { padding:0; }
+  .about-network-intro>p { max-width:530px; }
+  .about-network-stage { height:auto; }
+  .about-node img { display:none; }
+  .about-network-nodes { display:flex; flex-direction:column; }
+  .about-node { padding:18px 0; border-top:1px solid var(--rule); }
+  .about-node:last-of-type { border-bottom:1px solid var(--rule); }
+  .about-node-label { margin:0; }
+  .about-node-subtitle { font-size:15px; margin-top:7px; }
+  .about-description { position:relative; width:100%!important; left:auto!important; top:auto!important; margin:0 0 15px; padding:24px; box-shadow:none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .about-description { animation:none; }
+  .about-node:is(:hover,:focus-visible,[aria-expanded="true"]) img { transform:none; }
+}
+
+/* Three loose desktop pairings, with a compact graphic/title relationship. */
+@media(min-width:1024px) {
+  .about-network-stage { height:700px; }
+  .about-network-nodes { display:block; position:relative; }
+  .about-node { position:absolute; width:24%; min-width:120px; max-width:180px; padding:4px 0; }
+  .about-node img { width:72px; height:72px; margin-bottom:-9px; }
+  .about-node-label { margin-top:0; }
+  .about-node-subtitle { margin-top:3px; }
+  .about-node-label::before { color:#666; font-size:9px; font-weight:400; letter-spacing:.5px; }
+  .about-node-context { left:4%; top:12px; }
+  .about-node-context img { width:82px; height:82px; }
+  .about-node-context .about-node-label::before { content:"01 / "; }
+  .about-node-etymology { left:56%; top:58px; }
+  .about-node-etymology .about-node-label::before { content:"02 / "; }
+  .about-node-becoming { left:20%; top:222px; }
+  .about-node-becoming img { width:96px; height:96px; }
+  .about-node-becoming .about-node-label::before { content:"03 / "; }
+  .about-node-network { left:72%; top:270px; }
+  .about-node-network img { width:80px; height:80px; }
+  .about-node-network .about-node-label::before { content:"04 / "; }
+  .about-node-partners { left:10%; top:460px; }
+  .about-node-partners img { width:68px; height:68px; }
+  .about-node-partners .about-node-label::before { content:"05 / "; }
+  .about-node-mission { left:57%; top:502px; }
+  .about-node-mission img { width:68px; height:68px; }
+  .about-node-mission .about-node-label::before { content:"06 / "; }
+}
+
+/* Desktop paper notes keep a readable measure, regardless of gaps between concepts. */
+@media(min-width:1024px) {
+  .about-description { width:280px; min-width:260px; max-width:320px; }
+  .about-description-copy { word-break:normal; overflow-wrap:normal; }
+}
+
+@media(min-width:1024px) {
+  .about-description { transition:left 200ms ease,top 200ms ease; animation:about-note-local-in 200ms ease; }
+}
+@keyframes about-note-local-in { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
