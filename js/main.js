@@ -43,11 +43,11 @@ document.querySelectorAll('.story-close').forEach(button => button.addEventListe
 }));
 // Header and editorial links also open the relevant footer disclosure.
 function revealLinkedDetails() {
-  if (location.hash === '#collaborate' || location.hash === '#support') {
+  if (location.hash === '#support') {
     document.querySelector(location.hash).open = true;
   }
 }
-document.querySelectorAll('a[href="#collaborate"],a[href="#support"]').forEach(link => {
+document.querySelectorAll('a[href="#support"]').forEach(link => {
   link.addEventListener('click', () => { document.querySelector(link.getAttribute('href')).open = true; });
 });
 window.addEventListener('hashchange', revealLinkedDetails);
@@ -76,7 +76,7 @@ if (ticker) {
 
 /* Fresh brand colour per pointer entry; leaving always restores white. */
 const headerWordmark = document.querySelector('.site-header .wordmark');
-const wordmarkColors = ['#567bff', '#ffe800', '#ff45d4', '#ff8b38', '#b483ff', '#ff6fa9'];
+const wordmarkColors = ['var(--blue)', 'var(--yellow)', 'var(--thermal-pink)', 'var(--thermal-orange)'];
 let previousWordmarkColor = -1;
 headerWordmark.addEventListener('mouseenter', () => {
   const choices = wordmarkColors.map((_, index) => index).filter(index => index !== previousWordmarkColor);
