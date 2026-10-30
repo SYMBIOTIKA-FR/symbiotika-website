@@ -2096,3 +2096,137 @@ body::before { opacity:.095; }
 /* Linked noticeboard artwork retains the shared natural-ratio poster height. */
 .noticeboard-poster-link { display:block; width:max-content; }
 .noticeboard-poster-link:focus-visible { outline-offset:-3px; }
+
+/* One publication grid for every major internal Nowruz section. */
+.nowruz-page { --nowruz-gutter:clamp(70px,7vw,100px); }
+.nowruz-page .nowruz-section {
+  display:block;
+  max-width:none;
+  margin:110px 0;
+  padding:0;
+  border:0;
+}
+.nowruz-page .nowruz-section>h2 {
+  font-family:var(--body-font);
+  font-size:var(--heading-compact);
+  font-weight:600;
+  line-height:1.2;
+  letter-spacing:normal;
+  text-transform:none;
+  margin:0 0 44px;
+  max-width:30ch;
+}
+.nowruz-page .nowruz-section>.eyebrow { margin-bottom:20px; }
+.nowruz-section-body {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--nowruz-gutter);
+  align-items:start;
+}
+.nowruz-section-body>div,.nowruz-section-body>aside { min-width:0; }
+.nowruz-section-body .nowruz-copy { max-width:none; }
+.nowruz-section-body>div>ul:first-child,
+.nowruz-section-body>div>ol:first-child { margin-top:0; }
+.nowruz-section-body>div>p:first-child { margin-top:0; }
+.nowruz-page .nowruz-how { border-block:1px solid var(--rule); padding-block:44px; background:none; }
+.nowruz-page .nowruz-deadline { padding-top:0; border:0; }
+.nowruz-location-sticker { max-width:380px; }
+.nowruz-invitation-sticker,.nowruz-closing-sticker { margin:36px 0 0; max-width:290px; }
+.nowruz-page .nowruz-closing .nowruz-ink { margin:12px 0 0; }
+.nowruz-page .nowruz-closing .nowruz-question { font-size:var(--text-lg); line-height:1.45; }
+@media(max-width:800px) {
+  .nowruz-page .nowruz-section { margin-block:64px; }
+  .nowruz-page .nowruz-section>h2 { font-size:var(--heading-sm); margin-bottom:28px; }
+  .nowruz-section-body { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .nowruz-page .nowruz-how { padding-block:32px; }
+  .nowruz-location-sticker { max-width:280px; }
+  .nowruz-invitation-sticker,.nowruz-closing-sticker { max-width:220px; margin-top:24px; }
+}
+
+/* Related editorial pages: shared hierarchy, distinct but anchored compositions. */
+.contact-page,.collaborate-page { max-width:1240px; font-family:var(--body-font); }
+.contact-page .connect-welcome,.collaborate-page .community-intro { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:clamp(48px,7vw,100px); }
+.contact-page .connect-welcome-copy { padding-top:4px; }
+.contact-page .connect-welcome-copy h2 { font-size:var(--text-lg); font-weight:500; line-height:1.45; max-width:32ch; margin-bottom:24px; }
+.contact-page .connect-welcome-copy p { max-width:48ch; line-height:1.6; }
+.collaborate-page .community-intro>p { font-size:var(--text-lg); line-height:1.5; max-width:44ch; }
+.contact-page .eyebrow,.collaborate-page .eyebrow { font-size:var(--text-caption); font-weight:600; line-height:1.5; letter-spacing:.1em; }
+.contact-page .connection-methods { grid-template-columns:minmax(0,1fr) minmax(0,1.05fr) minmax(0,1fr); gap:48px 40px; margin-top:88px; }
+.contact-page .connection-methods article { border-top:1px solid var(--rule); padding-top:24px; }
+.contact-page .connection-methods article h2 { margin-bottom:20px; }
+.contact-page .connection-methods article p { font-size:var(--text-base); line-height:1.6; max-width:36ch; margin-bottom:20px; }
+.contact-page .connection-linkedin { margin-left:0; }
+.contact-page .connection-email { margin-top:0; align-self:center; }
+.contact-page .contact-character { width:100%; max-width:340px; margin:0; justify-self:center; }
+.contact-page .connection-methods .text-link { font-size:var(--text-caption); font-weight:600; letter-spacing:.03em; gap:12px; }
+.collaborate-page .collaboration-character { justify-self:start; margin-left:8%; }
+.collaborate-page .community-groups { margin:72px 0 0; column-gap:clamp(48px,7vw,100px); row-gap:48px; }
+.collaborate-page .community-groups article { border-top:1px solid var(--rule); padding-top:24px; transform:none; max-width:none; }
+.collaborate-page .community-groups h3 { margin-bottom:20px; }
+.collaborate-page .community-groups p { font-size:var(--text-base); line-height:1.6; max-width:48ch; }
+.collaborate-page .community-action { margin:64px 0 0; padding-top:32px; border-top:1px solid var(--ink); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:clamp(48px,7vw,100px); align-items:center; }
+.collaborate-page .community-action .proposal-link { justify-self:start; font-size:var(--text-sm); font-weight:600; letter-spacing:.03em; padding:14px 18px; }
+.collaborate-page .community-action p { margin:0; max-width:42ch; line-height:1.6; }
+/* The existing Nowruz grid remains; lead, list and factual emphasis share a rhythm. */
+.nowruz-page .nowruz-section-body { line-height:1.6; }
+.nowruz-page .nowruz-section-body .nowruz-lead { font-size:var(--text-lg); line-height:1.45; font-weight:500; margin-bottom:24px; }
+.nowruz-page .nowruz-section-body .nowruz-emphasis { font-weight:600; }
+.nowruz-page .nowruz-section-body li::marker { color:var(--muted-text); }
+.nowruz-page .nowruz-section-body h3 { font-size:var(--text-lg); font-weight:600; margin-block:32px 20px; }
+.nowruz-page .nowruz-location .nowruz-section-body { align-items:center; }
+.nowruz-page .nowruz-location-sticker { max-width:360px; margin:0; }
+@media(max-width:1050px) and (min-width:801px) {
+  .contact-page .connection-methods { column-gap:24px; }
+}
+@media(max-width:800px) {
+  .contact-page .connect-welcome,.collaborate-page .community-intro { grid-template-columns:minmax(0,1fr); gap:28px; }
+  .collaborate-page .community-intro>p { grid-column:1; grid-row:2; }
+  .collaborate-page .collaboration-character { grid-column:1; grid-row:3; justify-self:center; margin:8px 0; width:min(65%,210px); }
+  .contact-page .connection-methods { display:flex; flex-direction:column; gap:36px; margin-top:40px; }
+  .contact-page .connection-methods article { width:100%; margin:0; }
+  .contact-page .contact-character { width:min(85%,270px); align-self:center; }
+  .collaborate-page .community-groups { grid-template-columns:minmax(0,1fr); margin-top:40px; gap:36px; }
+  .collaborate-page .community-action { grid-template-columns:minmax(0,1fr); margin-top:48px; row-gap:20px; }
+  .collaborate-page .community-action .proposal-link { font-size:var(--text-caption); padding:14px 12px; gap:12px; max-width:100%; }
+  .nowruz-page .nowruz-location-sticker { max-width:280px; }
+}
+
+/* Shared category hierarchy for Contact and Collaborate. */
+.contact-page .content-index {
+  display:block;
+  font-family:var(--body-font);
+  font-size:var(--text-xs);
+  font-weight:400;
+  line-height:1.4;
+  letter-spacing:.08em;
+  color:var(--muted-text);
+  margin-bottom:8px;
+}
+.contact-page .connection-methods .content-category-title,
+.collaborate-page .community-groups .content-category-title {
+  font-family:var(--body-font);
+  font-size:var(--text-lg);
+  font-weight:600;
+  line-height:1.25;
+  letter-spacing:0;
+  text-transform:none;
+  margin:0 0 12px;
+}
+.contact-page .connection-methods .content-description,
+.collaborate-page .community-groups .content-description {
+  font-size:var(--text-base);
+  font-weight:400;
+  line-height:1.6;
+}
+.contact-page .connection-methods .content-cta,
+.collaborate-page .community-action .content-cta {
+  font-family:var(--body-font);
+  font-size:var(--text-sm);
+  font-weight:600;
+  line-height:1.4;
+  letter-spacing:.03em;
+}
+@media(max-width:800px) {
+  .contact-page .connection-methods .content-category-title,
+  .collaborate-page .community-groups .content-category-title { font-size:var(--text-subhead); }
+}
