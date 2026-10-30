@@ -1658,7 +1658,7 @@ body::before { opacity:.095; }
 .ticker-track { display:flex; width:max-content; animation:registration-scroll 28s linear infinite; }
 .ticker-copy { flex:none; padding-right:2rem; font-size:var(--text-sm); font-weight:600; letter-spacing:1.2px; white-space:nowrap; }
 .ticker-pause { flex:none; border:0; border-left:1px solid rgb(var(--ink-rgb) / .3); padding:0 14px; background:transparent; font:inherit; font-size:var(--text-xs); cursor:pointer; }
-.registration-ticker:is(:hover,:focus-within,.is-paused) .ticker-track { animation-play-state:paused; }
+.registration-ticker.is-paused .ticker-track { animation-play-state:paused; }
 @keyframes registration-scroll { to { transform:translateX(-50%); } }
 
 /* Small directional marks gather ink in place; no extra artwork or continuous motion. */
@@ -1727,7 +1727,7 @@ body::before { opacity:.095; }
 /* Noticeboard: one shared image height, natural widths, scroll contained in the board. */
 .event-posters { --poster-height:480px; display:flex; align-items:flex-start; gap:28px; overflow-x:auto; padding-bottom:16px; scroll-snap-type:x proximity; }
 .event-posters>figure:nth-child(n) { flex:0 0 auto; width:min-content; max-width:none; margin:0; scroll-snap-align:start; }
-.event-posters>figure>img { display:block; height:var(--poster-height); width:auto; max-width:none; object-fit:contain; }
+.event-posters>figure>img,.event-posters .noticeboard-poster-link>img { display:block; height:var(--poster-height); width:auto; max-width:none; object-fit:contain; }
 .event-posters figcaption { min-width:100%; width:0; }
 .site-header .wordmark { color:var(--white); transition:color 180ms ease; }
 .site-header .wordmark:hover { color:var(--wordmark-hover,var(--white)); }
@@ -2005,3 +2005,94 @@ body::before { opacity:.095; }
   .archive-gallery-panel .story-close { margin-bottom:24px; }
   .site-footer { gap:32px 24px; padding-top:32px; }
 }
+
+/* Current open-call links preserve the noticeboard's shared poster sizing. */
+.registration-strip { display:flex; min-width:0; align-items:stretch; border-block:1px solid var(--rule); }
+.registration-strip .registration-ticker { border:0; cursor:pointer; }
+.registration-strip .ticker-link:hover { color:var(--ink); opacity:.75; }
+.nowruz-project-link { margin-top:24px; }
+/* Nowruz programme: five recurring editorial patterns, scoped to this page. */
+.nowruz-page { max-width:1240px; padding-top:64px; font-family:var(--body-font); font-size:var(--text-base); line-height:1.6; }
+.nowruz-page strong,.nowruz-emphasis { font-weight:600; }
+.nowruz-page .eyebrow,.nowruz-page dt { font-size:var(--text-xs); font-weight:600; letter-spacing:.1em; text-transform:uppercase; }
+.nowruz-page h2 { font-family:var(--body-font); font-size:var(--heading-sm); font-weight:600; line-height:1.25; margin-bottom:32px; }
+.nowruz-page h3 { font-size:var(--text-lg); font-weight:600; margin-block:32px 20px; }
+.nowruz-page p+p { margin-top:20px; }
+.nowruz-page ul,.nowruz-page ol { padding-left:22px; margin-block:24px; }
+.nowruz-page li { padding-left:6px; margin-bottom:16px; }
+.nowruz-page a:not(.nowruz-apply) { text-decoration:underline; text-underline-offset:5px; }
+.nowruz-page .nowruz-lead { font-size:var(--text-lg); font-weight:500; line-height:1.45; }
+.nowruz-page .nowruz-question { font-family:var(--body-font); font-size:var(--heading-md); font-weight:600; line-height:1.2; letter-spacing:-.02em; }
+.nowruz-page .nowruz-key { font-size:var(--text-lg); font-weight:600; line-height:1.4; }
+.nowruz-note { color:var(--muted-text); }
+.nowruz-hero { display:grid; grid-template-columns:1.1fr 1fr; gap:8%; align-items:center; }
+.nowruz-hero h1 { font-size:var(--heading-lg); margin-block:20px 28px; }
+.nowruz-hero h1 span { display:block; font-family:var(--body-font); font-size:var(--text-lg); line-height:1.4; margin-top:16px; }
+.nowruz-hero p { max-width:44ch; }
+.nowruz-hero-art { justify-self:end; width:90%; max-width:440px; }
+.nowruz-sticker { width:100%; height:auto; object-fit:contain; }
+.nowruz-ink { width:90px; height:64px; object-fit:contain; }
+.nowruz-hero-art .nowruz-ink { margin:4px 10% 0 auto; }
+.nowruz-apply { background:var(--ink); color:var(--paper); padding:16px 22px; min-height:48px; margin-block:24px; max-width:100%; }
+.nowruz-apply:is(:hover,:focus-visible) { color:var(--yellow); }
+.nowruz-facts { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:24px; margin:64px 0 110px; }
+.nowruz-facts>div,.nowruz-dates dl>div { border-top:1px solid var(--rule); padding-top:20px; }
+.nowruz-page dt { margin-bottom:14px; }
+.nowruz-page dd { margin:0; font-weight:600; font-size:var(--text-subhead); line-height:1.4; }
+.nowruz-section { margin-block:110px; }
+.nowruz-copy { max-width:650px; }
+.nowruz-about,.nowruz-selection,.nowruz-contact { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2fr); gap:7%; }
+.nowruz-about .nowruz-lead { margin-bottom:28px; }
+.nowruz-invitation { padding-top:36px; border-top:1px solid var(--rule); }
+.nowruz-invitation>h2 { font-size:var(--text-caption); text-transform:uppercase; letter-spacing:.1em; }
+.nowruz-invitation>.nowruz-question { max-width:24ch; margin-block:32px 48px; }
+.nowruz-invitation-grid,.nowruz-pair { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8%; }
+.nowruz-invitation-sticker { max-width:290px; margin:40px 0 0 12%; }
+.nowruz-pair { margin-block:120px; }
+.nowruz-pair .nowruz-section { margin:0; border-top:1px solid var(--rule); padding-top:28px; }
+.nowruz-practical { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:10%; margin-block:110px; }
+.nowruz-practical .nowruz-section { margin:0; }
+.nowruz-practical .nowruz-section:nth-child(2) { padding-top:76px; }
+.nowruz-location { max-width:720px; margin:80px 0 110px auto; }
+.nowruz-how { background:var(--paper-shade); padding:48px; }
+.nowruz-how>h2 { font-size:var(--heading-compact); margin-bottom:40px; }
+.nowruz-application-grid { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:9%; }
+.nowruz-application-grid ol { margin-top:0; }
+.nowruz-deadline { border-top:1px solid var(--ink); padding-top:24px; align-self:start; }
+.nowruz-deadline .nowruz-key { margin-top:20px; }
+.nowruz-dates { margin-block:110px; }
+.nowruz-dates dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:40px; margin-top:36px; }
+.nowruz-dates dd { font-size:var(--text-lg); }
+.nowruz-closing { margin-block:140px 110px; }
+.nowruz-closing>h2 { font-size:var(--text-caption); text-transform:uppercase; letter-spacing:.1em; }
+.nowruz-closing-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:10%; }
+.nowruz-closing-sticker { max-width:340px; margin:40px 0 0 auto; }
+.nowruz-closing .nowruz-ink { margin-left:auto; }
+.nowruz-contact a { overflow-wrap:anywhere; }
+@media(max-width:1050px) {
+  .nowruz-facts { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:800px) {
+  .nowruz-page { padding-top:48px; }
+  .nowruz-hero,.nowruz-about,.nowruz-selection,.nowruz-contact,.nowruz-invitation-grid,.nowruz-pair,.nowruz-practical,.nowruz-application-grid,.nowruz-closing-grid { grid-template-columns:minmax(0,1fr); gap:32px; }
+  .nowruz-hero-art { width:75%; max-width:320px; justify-self:center; }
+  .nowruz-ink { width:70px; height:50px; }
+  .nowruz-facts { grid-template-columns:repeat(2,minmax(0,1fr)); margin-block:40px 64px; }
+  .nowruz-section,.nowruz-pair,.nowruz-practical,.nowruz-location,.nowruz-dates,.nowruz-closing { margin-block:64px; }
+  .nowruz-pair,.nowruz-practical { gap:48px; }
+  .nowruz-page h2 { margin-bottom:24px; }
+  .nowruz-about,.nowruz-selection,.nowruz-contact { gap:0; }
+  .nowruz-practical .nowruz-section:nth-child(2) { padding-top:0; }
+  .nowruz-invitation-sticker { max-width:210px; margin:28px auto; }
+  .nowruz-invitation>.nowruz-question { margin-block:24px 32px; }
+  .nowruz-how { padding:28px 20px; }
+  .nowruz-dates dl { grid-template-columns:minmax(0,1fr); gap:24px; }
+  .nowruz-closing-sticker { max-width:240px; margin-top:28px; }
+}
+@media(max-width:400px) {
+  .nowruz-facts { grid-template-columns:minmax(0,1fr); }
+}
+
+/* Linked noticeboard artwork retains the shared natural-ratio poster height. */
+.noticeboard-poster-link { display:block; width:max-content; }
+.noticeboard-poster-link:focus-visible { outline-offset:-3px; }

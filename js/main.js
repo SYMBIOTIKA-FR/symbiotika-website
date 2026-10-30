@@ -56,7 +56,7 @@ revealLinkedDetails();
 /* A user-controlled ticker, with a static reduced-motion presentation. */
 const ticker = document.querySelector('.registration-ticker');
 if (ticker) {
-  const tickerPause = ticker.querySelector('.ticker-pause');
+  const tickerPause = document.querySelector('.ticker-pause');
   tickerPause.hidden = false;
   tickerPause.addEventListener('click', () => {
     const paused = tickerPause.getAttribute('aria-pressed') !== 'true';
@@ -64,12 +64,6 @@ if (ticker) {
     tickerPause.setAttribute('aria-label', paused ? 'Resume registration ticker' : 'Pause registration ticker');
     tickerPause.textContent = paused ? 'Resume' : 'Pause';
     ticker.classList.toggle('is-paused', paused);
-  });
-  const registrationLink = document.querySelector('.ticker-link');
-  registrationLink.addEventListener('click', () => {
-    if (registrationLink.getAttribute('href') === '#registration-details') {
-      document.querySelector('#registration-details').open = true;
-    }
   });
 
 }
