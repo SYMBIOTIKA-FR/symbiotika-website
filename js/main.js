@@ -25,7 +25,7 @@ const projectButtons = [...document.querySelectorAll('.project-toggle')];
 function setProject(button, open) {
   const panel = document.getElementById(button.getAttribute('aria-controls'));
   button.setAttribute('aria-expanded', String(open));
-  button.firstElementChild.textContent = open ? 'Close project' : 'View project';
+  button.firstElementChild.textContent = open ? 'Close project' : (button.dataset.closedLabel || 'View project');
   button.lastElementChild.textContent = open ? '−' : '+';
   panel.classList.toggle('is-open', open);
   panel.inert = !open;
