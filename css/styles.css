@@ -2011,10 +2011,10 @@ body::before { opacity:.095; }
 .registration-strip .registration-ticker { border:0; cursor:pointer; }
 .registration-strip .ticker-link:hover { color:var(--ink); opacity:.75; }
 .nowruz-project-link { margin-top:24px; }
-/* Past Nowruz description stays inside the existing gallery disclosure. */
-#nan-story .nowruz-retrospective { max-width:72ch; margin:clamp(28px,4vw,48px) auto 0; font-size:var(--text-base); line-height:1.6; }
-#nan-story .nowruz-retrospective h3 { font-size:var(--heading-sm); line-height:1.25; margin-bottom:24px; }
-#nan-story .nowruz-retrospective p+p { margin-top:18px; }
+/* Shared past-project descriptions stay inside their existing gallery disclosures. */
+:is(#nan-story, #market-story) .project-retrospective { max-width:72ch; margin:clamp(28px,4vw,48px) auto 0; font-size:var(--text-base); line-height:1.6; }
+:is(#nan-story, #market-story) .project-retrospective h3 { font-size:var(--heading-sm); line-height:1.25; margin-bottom:24px; }
+:is(#nan-story, #market-story) .project-retrospective p+p { margin-top:18px; }
 #nan-story .nowruz-retrospective-recap { margin-block:28px; padding-top:24px; border-top:1px solid var(--rule); }
 #nan-story .nowruz-retrospective ul { padding-left:22px; margin-block:18px; }
 #nan-story .nowruz-retrospective li+li { margin-top:8px; }
@@ -2237,8 +2237,3 @@ body::before { opacity:.095; }
   .contact-page .connection-methods .content-category-title,
   .collaborate-page .community-groups .content-category-title { font-size:var(--text-subhead); }
 }
-
-/* Solidarity Art Market uses the same reading width and spacing as Nowruz. */
-#market-story .market-retrospective { max-width:72ch; margin:clamp(28px,4vw,48px) auto 0; font-size:var(--text-base); line-height:1.6; }
-#market-story .market-retrospective h3 { font-size:var(--heading-sm); line-height:1.25; margin-bottom:24px; }
-#market-story .market-retrospective p+p { margin-top:18px; }
